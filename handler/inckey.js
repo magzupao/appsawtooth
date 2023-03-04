@@ -1,8 +1,8 @@
-const { TransactionHandler } = require('sawtooth-sdk/processor/handler')
+const { TransactionHandler } = require('sawtooth-sdk-js/processor/handler')
 const {
     InvalidTransaction,
     InternalError
-} = require('sawtooth-sdk/processor/exceptions')
+} = require('sawtooth-sdk-js/processor/exceptions')
 
 const crypto = require('crypto')
 
