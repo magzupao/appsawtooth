@@ -12,7 +12,8 @@
   "description": "",
   "dependencies": {
     "express": "4.18.2",
-    "sawtooth-sdk-js": "^1.2.0"
+    "sawtooth-sdk-js": "^1.2.0",
+    "secp256kl": "^4.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
