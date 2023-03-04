@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "express": "4.18.2",
     "sawtooth-sdk-js": "^1.2.0"
   },
   "devDependencies": {
