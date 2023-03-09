@@ -25,6 +25,9 @@ class IntegerKeyHandler extends TransactionHandler {
 
         let address = INT_KEY_NAMESPACE + _hash(name).slice(-64)
 
+        console.log(" ****************************** ")
+        console.log(address)
+
         return context.setState({
             [address]: JSON.stringify(value)
         }).then((addresses) => {
