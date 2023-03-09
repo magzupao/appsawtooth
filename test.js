@@ -25,7 +25,7 @@ const context = createContext('secp256k1');
 
 const signer = new CryptoFactory(context).newSigner(privateKey);
 
-const payload = "Test ME";
+const payload = "Test ME!!!!!!!";
 const payloadBytes = Buffer.from(payload);
 
 const transactionHanderBytes = protobuf.TransactionHeader.encode({
