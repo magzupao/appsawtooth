@@ -27,4 +27,41 @@ const signer = new CryptoFactory(context).newSigner(privateKey);
 const payload = "Test ME!!!!!!!";
 const payloadBytes = Buffer.from(payload);
 
+const transactionHanderBytes = protobuf.TransactionHeader.encode({
+    familyName: 'intkey',
+    familyVersion: '1.0',
+    inputs: [],
+    outputs: [],
+    signerPublicKey: signer.getPublicKey().asHex(),
+    nonce: `${Math.random()}`,
+    batchrPublickey: signer.getPublicKey().asHex(),
+    dependencies: [],
+    payloadSha512: createHash('sha512').update(payloadBytes).digest('hex')
+})
+
+const transaction = protobuf.Transaction.create({
+    header: transactionHanderBytes,
+    headerSignature: signer.sign(transactionHanderBytes),
+    payload: payloadBytes
+})
+
+const transactions = [transaction];
+
+const batchHeaderBytes = protobuf.BatchHeader.encode({
+    signerPublicKey: signer.getPublicKey().asHex(),
+    transactionIds: transactions.map(t => t.headerSignature)    
+}).finish();
+
+const batch = protobuf.Batch.create({
+    header: batchHeaderBytes,
+    headerSignature: signer.sign(batchHeaderBytes),
+    transactions: transactions
+})
+
+const batches = [batch];
+const batchLisBytes = protobuf.BatchList.encode({
+    batches: batches
+}).finish();
+
+console.log(batchLisBytes.toString())
 
