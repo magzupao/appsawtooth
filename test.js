@@ -38,7 +38,7 @@ const transactionHanderBytes = protobuf.TransactionHeader.encode({
     batchrPublickey: signer.getPublicKey().asHex(),
     dependencies: [],
     payloadSha512: createHash('sha512').update(payloadBytes).digest('hex')
-})
+}).finish();
 
 const transaction = protobuf.Transaction.create({
     header: transactionHanderBytes,
