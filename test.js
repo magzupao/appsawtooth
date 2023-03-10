@@ -73,7 +73,7 @@ axios.post('http://localhost:8008/batches',batchListBytes,{
         'Content-Type': 'application/octet-strean'
     },
 }).then((res)=>{
-    console.log(res.data)
+    console.log(res)
 }).catch((err)=>{
     console.log(err)
 })
