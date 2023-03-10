@@ -1,7 +1,10 @@
 lista nvm a instalar:
-nvm ls-remote
-# no es necesario usar el sudo
-nvm install v16.14.2
+nvm ls-remote  
+# no es necesario usar el sudo  
+nvm install v16.14.2  
+
+sudo npm install -g --force nodemon  
+  
 
 #descargamos el docker-compose
 https://sawtooth.hyperledger.org/docs/1.2/app_developers_guide/installing_sawtooth.html#step-1-download-the-sawtooth-docker-compose-file
