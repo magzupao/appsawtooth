@@ -5,6 +5,8 @@ const { Secp256k1PrivateKey } = require('sawtooth-sdk-js/signing/secp256k1');
 const { CryptoFactory, createContext } = require('sawtooth-sdk-js/signing');
 const protobuf = require('sawtooth-sdk-js/protobuf');
 
+const crypto = require('crypto')
+
 const createPrivateKey = () => {
     const msg = randomBytes(32)
     let privKey
@@ -37,7 +39,7 @@ const transactionHanderBytes = protobuf.TransactionHeader.encode({
     nonce: `${Math.random()}`,
     batchrPublickey: signer.getPublicKey().asHex(),
     dependencies: [],
-    payloadSha512: createHash('sha512').update(payloadBytes).digest('hex')
+    payloadSha512: crypto.createHash('sha512').update(payloadBytes).digest('hex')
 }).finish();
 
 const transaction = protobuf.Transaction.create({
