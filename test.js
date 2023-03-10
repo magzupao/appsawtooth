@@ -70,7 +70,7 @@ console.log(batchLisBytes.toString())
 
 axios.post('http://localhost:8008/batches',{},{
     heards: {
-        'Content-type': 'application/octet-stream'
+        'Content-Type': 'application/octet-stream'
     },
     data: batchLisBytes
 }).then((res)=>{
