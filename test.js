@@ -70,7 +70,7 @@ const batchListBytes = protobuf.BatchList.encode({
 
 axios.post('http://localhost:8008/batches',batchListBytes,{
     heards: {
-        'Content-Type': 'application/octet-strean'
+        'Content-Type': 'application/json'
     },
 }).then((res)=>{
     console.log(res)
