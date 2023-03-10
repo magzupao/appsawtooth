@@ -66,14 +66,14 @@ const batchListBytes = protobuf.BatchList.encode({
     batches: batches
 }).finish();
 
-console.log(batchLisBytes.toString())
+console.log(batchListBytes.toString())
 
-axios.post('http://localhost:8008/batches',batchLisBytes,{
+axios.post('http://localhost:8008/batches',batchListBytes,{
     heards: {
-        'Content-Type': 'application/octet-stream'
+        'Content-Type': 'application/octet-strean'
     },
 }).then((res)=>{
     console.log(res.data)
 }).catch((err)=>{
-    console.log(err.response)
+    console.log(err)
 })
