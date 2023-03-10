@@ -62,7 +62,7 @@ const batch = protobuf.Batch.create({
 })
 
 const batches = [batch];
-const batchLisBytes = protobuf.BatchList.encode({
+const batchListBytes = protobuf.BatchList.encode({
     batches: batches
 }).finish();
 
