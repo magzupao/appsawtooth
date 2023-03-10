@@ -1,4 +1,3 @@
-//const { randomBytes, createHash } = require('crypto')
 const { randomBytes } = require('crypto')
 const secp256k1 = require('secp256k1')
 
