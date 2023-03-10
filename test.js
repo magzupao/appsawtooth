@@ -3,6 +3,7 @@ const secp256k1 = require('secp256k1')
 
 const { Secp256k1PrivateKey } = require('sawtooth-sdk-js/signing/secp256k1');
 const { CryptoFactory, createContext } = require('sawtooth-sdk-js/signing');
+const protobuf = require('sawtooth-sdk-js/protobuf');
 
 const createPrivateKey = () => {
     const msg = randomBytes(32)
