@@ -19,7 +19,7 @@ const createPrivateKey = () => {
 
 const privateKeyHexStr = createPrivateKey();
 
-const privateKey = new Secp256k1PrivateKey(privateKeyHexStr);
+const privateKey = new Secp256k1PrivateKey(Buffer.from(privateKeyHexStr, 'hex'));
 
 const context = createContext('secp256k1');
 
