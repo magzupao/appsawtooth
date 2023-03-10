@@ -21,6 +21,9 @@ docker exec -it sawtooth-shell-default bash
 #probamos el servicio
 curl http://rest-api:8008/blocks
 
+intkey create_batch --count 10 --key-count 5
+cat batches.intkey
+
 #instalamos sdk js
 https://www.npmjs.com/package/sawtooth-sdk-js
 
