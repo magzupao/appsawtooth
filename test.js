@@ -1,4 +1,4 @@
-const { randomBytes, createHash } = require('crypto')
+const { randomBytes, sign, createHash } = require('crypto')
 const secp256k1 = require('secp256k1')
 
 const axios = require('axios').default;
@@ -33,11 +33,11 @@ const payloadBytes = Buffer.from(payload);
 const transactionHanderBytes = protobuf.TransactionHeader.encode({
     familyName: 'intkey',
     familyVersion: '1.0',
-    inputs: [],
-    outputs: [],
+    inputs: ['1cf126'],
+    outputs: ['1cf126'],
     signerPublicKey: signer.getPublicKey().asHex(),
     nonce: `${Math.random()}`,
-    batchrPublickey: signer.getPublicKey().asHex(),
+    batcherPublicKey: signer.getPublicKey().asHex(),
     dependencies: [],
     payloadSha512: createHash('sha512').update(payloadBytes).digest('hex')
 }).finish();
